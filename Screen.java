@@ -28,6 +28,15 @@ public class Screen extends JFrame {
         jButton.addActionListener(this::caixa);
 
 
+        JTextField texto = new JTextField("Área para digitação");
+        texto.setBounds(400, 200, 300, 200);
+        texto.setFont(new Font("Arial", Font.ITALIC,  25));
+        texto.setText("Escreva aqui");
+
+        add(texto);
+
+        setVisible(true);
+
 
     }
 
