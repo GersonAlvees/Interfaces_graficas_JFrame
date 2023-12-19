@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Screen extends JFrame {
     public Screen() {
@@ -23,9 +25,15 @@ public class Screen extends JFrame {
 
         add(jButton);
 
+        jButton.addActionListener(this::caixa);
 
 
 
+    }
 
+    private void caixa(ActionEvent actionEvent){
+        JOptionPane.showMessageDialog(null,
+                "Olá Calanguinho", "Mais um calango online",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 }
