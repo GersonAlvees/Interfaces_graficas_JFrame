@@ -32,7 +32,7 @@ public class Screen extends JFrame {
         jButton.addActionListener(this::caixa);
 
 
-        valor1 = new JTextField();
+        valor1 = new JTextField(); //Implementações das caixas de texto
         valor1.setBounds(400, 200, 200, 100);
         valor1.setFont(new Font("Arial", Font.ITALIC,  25));
 
@@ -44,8 +44,22 @@ public class Screen extends JFrame {
 
         add(valor2);
 
-        valor1.setVisible(true);
-        valor2.setVisible(true);
+
+        JLabel primeironumero = new JLabel("Primeiro: "); //Implementações com o JLabel
+        primeironumero.setBounds(100, 80, 100, 100);
+        primeironumero.setFont(new Font("Arial", Font.ITALIC, 15));
+        add(primeironumero);
+
+        JLabel segundonumero = new JLabel("Segundo: ");
+        segundonumero.setBounds(100, 240, 100, 100);
+        segundonumero.setFont(new Font("Arial", Font.ITALIC, 15));
+        add(segundonumero);
+
+        JLabel titleinicial = new JLabel("DIGITE DOIS VALORES");
+        titleinicial.setBounds(400, 10, 400, 100);
+        titleinicial.setFont(new Font("Oswald", Font.PLAIN, 30));
+        add(titleinicial);
+
 
     }
 
