@@ -4,6 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Screen extends JFrame {
+
+    JTextField valor1;
+    JTextField valor2;
+
     public Screen() {
 
         setTitle("Testes interface");   //Titulo
@@ -15,7 +19,7 @@ public class Screen extends JFrame {
 
         setLayout(null);
 
-        JButton jButton = new JButton("BOTÃO DO BEM");
+        JButton jButton = new JButton("BOTÃO DA SOMA");
         jButton.setBounds(540, 360, 280, 90);
         Font font = new Font("Oswald", Font.BOLD,  25);
         jButton.setFont(font);
@@ -28,21 +32,34 @@ public class Screen extends JFrame {
         jButton.addActionListener(this::caixa);
 
 
-        JTextField texto = new JTextField("Área para digitação");
-        texto.setBounds(400, 200, 300, 200);
-        texto.setFont(new Font("Arial", Font.ITALIC,  25));
-        texto.setText("Escreva aqui");
+        valor1 = new JTextField();
+        valor1.setBounds(400, 200, 200, 100);
+        valor1.setFont(new Font("Arial", Font.ITALIC,  25));
 
-        add(texto);
+        add(valor1);
 
-        setVisible(true);
+        valor2 = new JTextField();
+        valor2.setBounds(400, 50, 200, 100);
+        valor2.setFont(new Font("Arial", Font.ITALIC,  25));
 
+        add(valor2);
+
+        valor1.setVisible(true);
+        valor2.setVisible(true);
 
     }
 
     private void caixa(ActionEvent actionEvent){
+
+        Integer primierovalor = Integer.parseInt(valor1.getText());
+        Integer segundovalor = Integer.parseInt(valor2.getText());
+
+        Integer soma = primierovalor + segundovalor;
+
+
         JOptionPane.showMessageDialog(null,
-                "Olá Calanguinho", "Mais um calango online",
+                "A soma dos valores é: " + soma, "Mais um calango online",
                 JOptionPane.INFORMATION_MESSAGE);
+
     }
 }
